@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色调 -->
+    <color name="primary">#2196F3</color>          <!-- Material Blue 500 -->
+    <color name="primary_dark">#1976D2</color>     <!-- Material Blue 700 -->
+    <color name="accent">#FF4081</color>           <!-- Material Pink A200 -->
+
+    <!-- Material 3 标准颜色 -->
+    <color name="md_primary">#6750A4</color>
+    <color name="md_on_primary">#FFFFFF</color>
+    <color name="md_surface">#FFFBFE</color>
+    <!-- 文本颜色 -->
+    <color name="primary_text">#1C1B1F</color>  <!-- 主文本 -->
+    <color name="secondary_text">#49454F</color> <!-- 次要文本 -->
+
+    <!-- 错误状态 -->
+
+</resources>

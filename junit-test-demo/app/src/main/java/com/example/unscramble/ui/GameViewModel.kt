@@ -16,9 +16,9 @@
 
 package com.example.unscramble.ui
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+//import androidx.compose.runtime.getValue
+//import androidx.compose.runtime.mutableStateOf
+//import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.unscramble.data.MAX_NO_OF_WORDS
 import com.example.unscramble.data.SCORE_INCREASE
@@ -37,7 +37,7 @@ class GameViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
 
-    var userGuess by mutableStateOf("")
+    var userGuess: String = ""
         private set
 
     // Set of words used in the game
@@ -53,7 +53,7 @@ class GameViewModel : ViewModel() {
      */
     fun resetGame() {
         usedWords.clear()
-        _uiState.value = GameUiState(currentScrambledWord = pickRandomWordAndShuffle())
+        _uiState.value = GameUiState(currentScrambledWord = pickRandomWordAndShuffle(), currentWord = currentWord)
     }
 
     /*
@@ -112,6 +112,7 @@ class GameViewModel : ViewModel() {
                 currentState.copy(
                     isGuessedWordWrong = false,
                     currentScrambledWord = pickRandomWordAndShuffle(),
+                    currentWord = currentWord,
                     currentWordCount = currentState.currentWordCount.inc(),
                     score = updatedScore
                 )

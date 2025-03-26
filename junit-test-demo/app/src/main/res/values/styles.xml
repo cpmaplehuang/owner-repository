@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="TitleText" parent="BaseText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ScrambledWordText" parent="BaseText">
+        <item name="android:textSize">32sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <!-- 操作按钮样式 -->
+    <style name="ActionButton" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ActionButton.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+    <!-- 分数显示样式 -->
+    <style name="ScoreText" parent="BaseText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 说明文字样式 -->
+    <style name="InstructionText" >
+    <!-- 基础文字属性 -->
+    <item name="android:textSize">16sp</item>       <!-- 对应 Compose 的 typography.titleMedium -->
+    <item name="android:textColor">@color/secondary_text</item> <!-- 次要文本颜色 -->
+    <item name="android:textAlignment">center</item> <!-- 文字居中 -->
+
+    <!-- 边距控制 -->
+    <item name="android:layout_marginTop">16dp</item> <!-- 与上方元素的间距 -->
+    <item name="android:padding">8dp</item>          <!-- 内边距 -->
+
+    <!-- Material 特性 -->
+    <item name="android:letterSpacing">0.01</item>  <!-- 字母间距 -->
+    <item name="android:lineSpacingExtra">4sp</item> <!-- 行间距 -->
+    </style>
+
+    <!-- 单词计数文字样式 -->
+    <style name="WordCountText" parent="TextAppearance.Material3.BodySmall">
+        <!-- 基础属性 -->
+        <item name="android:textSize">14sp</item>          <!-- 对应 Compose 的 typography.bodySmall -->
+        <item name="android:textColor">@color/secondary_text</item> <!-- 使用预定义的次要文本颜色 -->
+
+        <!-- 布局定位 -->
+        <item name="android:layout_marginTop">16dp</item>  <!-- 顶部间距 -->
+        <item name="android:layout_marginEnd">16dp</item>  <!-- 右侧间距 -->
+        <item name="android:layout_gravity">end</item>     <!-- 靠右对齐 -->
+
+        <!-- 文字特性 -->
+        <item name="android:fontFamily">sans-serif-medium</item> <!-- 中等字重 -->
+        <item name="android:letterSpacing">0.025</item>    <!-- 字母间距 -->
+    </style>
+
+</resources>

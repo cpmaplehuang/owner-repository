@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/game_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <!-- 单词计数 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/word_count"
+            style="@style/WordCountText"
+            android:layout_gravity="end"/>
+
+        <!-- 乱序单词 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrambled_word"
+            style="@style/ScrambledWordText"
+            android:visibility="visible"/>
+
+        <!-- 当前单词 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/current_word"
+            style="@style/ScrambledWordText"
+            android:visibility="visible"/>
+
+        <!-- 输入框 -->
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/input_layout"-->
+<!--            android:TextAppearance="@style/Widget.Material3.TextInputLayout.OutlinedBox"-->
+<!--            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            app:errorEnabled="true">-->
+
+            <EditText
+                android:id="@+id/user_input"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="text"
+                android:hint="@string/enter_your_word"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/error_labeled"
+            android:text="Wrong Guess!"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <!-- 说明文字 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/instructions"
+            style="@style/InstructionText"
+            android:text="@string/instructions"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2023 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,5 +15,16 @@
   -->
 
 <resources>
-    <style name="Theme.Unscramble" parent="android:Theme.Material.Light.NoActionBar" />
+    <!--    <style name="Theme.Unscramble" parent="Theme.MaterialComponents.DayNight.DarkActionBar" />-->
+
+
+    <!-- 正确：使用 AppCompat 主题 -->
+    <style name="Theme.Unscramble" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- 自定义属性 -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
 </resources>
+
+

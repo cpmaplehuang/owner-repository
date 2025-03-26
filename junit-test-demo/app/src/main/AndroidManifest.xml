@@ -27,7 +27,7 @@
         android:theme="@style/Theme.Unscramble"
         tools:targetApi="33">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity2"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Unscramble">

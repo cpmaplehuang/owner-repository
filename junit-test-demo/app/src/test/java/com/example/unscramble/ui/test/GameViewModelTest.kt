@@ -55,15 +55,19 @@ class GameViewModelTest {
 
     @Test
     fun gameViewModel_IncorrectGuess_ErrorFlagSet() {
-        // Given an incorrect word as input
-        val incorrectPlayerWord = "and"
+
+        var currentGameUiState = viewModel.uiState.value
+        val incorrectPlayerWord = "abcd" //getUnscrambledWord(currentGameUiState.currentWord)
 
         viewModel.updateUserGuess(incorrectPlayerWord)
         viewModel.checkUserGuess()
+        // Given an incorrect word as input
+        currentGameUiState = viewModel.uiState.value
+        System.out.println("score: ${currentGameUiState.currentScrambledWord}")
 
-        val currentGameUiState = viewModel.uiState.value
         // Assert that score is unchanged
         assertEquals(0, currentGameUiState.score)
+//        System.out.println("score: ${currentGameUiState.isGuessedWordWrong}")
         // Assert that checkUserGuess() method updates isGuessedWordWrong correctly
         assertTrue(currentGameUiState.isGuessedWordWrong)
     }
@@ -112,8 +116,11 @@ class GameViewModelTest {
             viewModel.updateUserGuess(correctPlayerWord)
             viewModel.checkUserGuess()
             currentGameUiState = viewModel.uiState.value
-            correctPlayerWord = getUnscrambledWord(currentGameUiState.currentScrambledWord)
+//            correctPlayerWord = if(it==4) {"aaaa"} else {getUnscrambledWord(currentGameUiState.currentScrambledWord)}
+//            correctPlayerWord = getUnscrambledWord(currentGameUiState.currentScrambledWord)
             // Assert that after each correct answer, score is updated correctly.
+//            System.out.println("score: ${currentGameUiState.score}")
+
             assertEquals(expectedScore, currentGameUiState.score)
         }
         // Assert that after all questions are answered, the current word count is up-to-date.
