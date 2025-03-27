@@ -18,6 +18,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("de.mannodermaus.android-junit5") version "1.12.0.0"
+    id("io.github.orange-3.unit-test-architect")
 //    id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -62,6 +63,37 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
+}
+
+//configurations.all {
+//    resolutionStrategy.dependencySubstitution {
+//        substitute(module("org.utils:api"))
+//            .using(project(":api")).because("we work with the unreleased development version")
+//    }
+//}
+
+tasks.register("generateTests", io.github.orange3.unittestarchitect.TestCaseGenerator::class) {
+    exclude = listOf()
+    urls = emptyArray()
+    sourceDirectoryList = listOf("")
+    doFirst {
+        android.applicationVariants.forEach { variant ->
+//        println("variant.name:" + variant.name)
+            if (variant.name == "debug") {
+                val javaCompiledClasses =
+                    variant.getJavaCompileProvider().get().destinationDirectory.getAsFile().get()
+                        .toURI().toURL()
+                val restDependencies =
+                    variant.getCompileClasspath(null).files.map { it.toURI().toURL() }
+                        .toTypedArray()
+                urls = restDependencies + javaCompiledClasses
+                sourceDirectoryList = listOf("src/main/java/com/example/unscramble/ui")
+                exclude = listOf()
+            }
+        }
+    }
 }
 
 dependencies {
@@ -82,6 +114,8 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.material:material:1.12.0")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.2.0")
+
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0-alpha01")
     androidTestImplementation("androidx.test.ext:junit:1.3.0-alpha01")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
