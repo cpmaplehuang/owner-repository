@@ -89,7 +89,7 @@ tasks.register("generateTests", io.github.orange3.unittestarchitect.TestCaseGene
                     variant.getCompileClasspath(null).files.map { it.toURI().toURL() }
                         .toTypedArray()
                 urls = restDependencies + javaCompiledClasses
-                sourceDirectoryList = listOf("src/main/java/com/example/unscramble/ui")
+                sourceDirectoryList = listOf("${project.projectDir.getAbsolutePath()}/src/main/java/com/example/unscramble/ui")
                 exclude = listOf()
             }
         }
