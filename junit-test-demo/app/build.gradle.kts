@@ -52,11 +52,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 //    buildFeatures {
 //        compose = true
@@ -116,8 +116,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.material:material:1.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:4.2.0")
 
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0-alpha01")
     androidTestImplementation("androidx.test.ext:junit:1.3.0-alpha01")
@@ -125,4 +125,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
     testImplementation("org.junit.platform:junit-platform-runner:1.8.2")
+    testImplementation("io.mockk:mockk:1.13.8")
+    testImplementation("io.mockk:mockk-agent-jvm:1.13.8") // 需要处理静态方法时
+    androidTestImplementation("io.mockk:mockk-android:1.13.8")
 }

@@ -2,6 +2,7 @@ package com.example.unscramble.utils
 
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeAll
@@ -39,15 +40,10 @@ import java.util.stream.Stream
  * **/
 
 /**
- *
- * **/
-
-/**
  * Todo @TestFactory
  * **/
 
 class ValidationUtilsTest {
-
 
     companion object {
         /**
