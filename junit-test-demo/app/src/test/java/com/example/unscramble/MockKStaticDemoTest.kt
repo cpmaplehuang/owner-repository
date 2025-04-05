@@ -8,12 +8,14 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.impl.annotations.SpyK
 import io.mockk.mockk
+import io.mockk.mockkObject
+import io.mockk.mockkStatic
 import io.mockk.spyk
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 
-object MockKDemoTest {
+object MockKStaticDemoTest {
 
 
     /**
@@ -99,6 +101,49 @@ object MockKDemoTest {
         // relaxed 模式下，會返回默認值，所以mockUserInfo.summary，始終返回 ""
         assertEquals("", mockUserData.getUserInfoSummary())
     }
+
+    @Test
+    fun objectMockTest() {
+
+        val msg = "test"
+
+        mockkObject(ObjectStatic)
+
+        every { ObjectStatic.callObjectFunction(any()) } returns "mock"
+
+        assertEquals("mock", ObjectStatic.callObjectFunction(msg))
+
+        mockkStatic(ObjectStatic::class)
+
+        every { ObjectStatic.callStaticFunc(any()) } returns "mock"
+
+        assertEquals("mock", ObjectStatic.callStaticFunc(msg))
+
+
+    }
+
+    @Test
+    fun companionObjectMockTest() {
+
+        val msg = "test"
+
+        mockkObject(CompanionObjectStatic.Companion)
+
+        every { CompanionObjectStatic.callCompanionFunction(any()) } returns "mock"
+
+        assertEquals("mock", CompanionObjectStatic.callCompanionFunction(msg))
+
+        /**
+         * 對於Companion Object 不用 mockkStatic，也能調用JvmStatic Function，和 Object 有不一樣
+         * **/
+        //mockkStatic(CompanionObjectStatic.Companion::class)
+
+        every { CompanionObjectStatic.callCompanionStaticFunc(any()) } returns "mock"
+
+        assertEquals("mock", CompanionObjectStatic.callCompanionStaticFunc(msg))
+
+    }
+
 
 
 }

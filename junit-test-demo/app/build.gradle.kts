@@ -18,6 +18,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("de.mannodermaus.android-junit5") version "1.12.0.0"
+    id("org.jetbrains.kotlinx.kover")
     id("io.github.orange-3.unit-test-architect")
 //    id("org.jetbrains.kotlin.plugin.compose")
 }
