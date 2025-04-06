@@ -68,6 +68,20 @@ android {
         }
     }
 
+    kover {
+        reports {
+            filters {
+                excludes {
+                    //排除指定註解的代碼，可用於實現排除指定Function
+                    annotatedBy("*.ExcludeFromReport")
+                    //排除指定的class
+//                    classes()
+                    //排除指定的包
+//                    packages()
+                }
+            }
+        }
+    }
 
 }
 
