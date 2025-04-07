@@ -37,6 +37,7 @@ import java.util.stream.Stream
  * assertTimeoutPreemptively 断言超时; 和assertTimeout的區別，在於assertTimeoutPreemptively一旦超時，就立即返回錯誤，assertTimeout會把 lambda 執行完
  * assertThrows 斷言異常，當 Lambda 表達式中代碼出現的異常會跟首個參數的異常類型進行比較，如果不屬於同一類異常，則失敗。
  * fail 使單元測試失敗。
+ * Given-When-Then 模式
  * **/
 
 /**
@@ -124,6 +125,9 @@ class ValidationUtilsTest {
         assertTrue(ValidationUtils.isValidPhoneNumber("50000000"))
     }
 
+    //工作量
+    //test case怎保证复盖率
+
 
     // 有效号码测试
     /**
@@ -164,10 +168,13 @@ class ValidationUtilsTest {
      * 另外一種支持多參數的方式
      * **/
     @ParameterizedTest
-    @MethodSource("abnormalLengthStringProvider")
+    @MethodSource("abnormalLengthStringProvider") //GIVEN
     fun `invalid length should return false`(index: Int, phoneNumber: String) {
         println("invalid length $index $phoneNumber")
-        assertFalse(ValidationUtils.isValidPhoneNumber(phoneNumber))
+        //WHEN
+        val isCorrect = ValidationUtils.isValidPhoneNumber(phoneNumber)
+        //THEN
+        assertFalse(isCorrect)
     }
 
 

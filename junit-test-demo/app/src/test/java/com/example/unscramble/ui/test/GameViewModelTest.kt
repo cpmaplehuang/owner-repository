@@ -20,11 +20,11 @@ import com.example.unscramble.data.MAX_NO_OF_WORDS
 import com.example.unscramble.data.SCORE_INCREASE
 import com.example.unscramble.data.getUnscrambledWord
 import com.example.unscramble.ui.GameViewModel
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNotEquals
-import org.junit.Assert.assertTrue
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 class GameViewModelTest {
     private val viewModel = GameViewModel()
@@ -54,17 +54,19 @@ class GameViewModelTest {
     }
 
     @Test
-    fun gameViewModel_IncorrectGuess_ErrorFlagSet() {
-
+    fun `gameViewModel_IncorrectGuess_ErrorFlagSet`() {
+         //GIVEN
         var currentGameUiState = viewModel.uiState.value
         val incorrectPlayerWord = "abcd" //getUnscrambledWord(currentGameUiState.currentWord)
 
+        // When
         viewModel.updateUserGuess(incorrectPlayerWord)
         viewModel.checkUserGuess()
         // Given an incorrect word as input
         currentGameUiState = viewModel.uiState.value
         System.out.println("score: ${currentGameUiState.currentScrambledWord}")
 
+        //Then
         // Assert that score is unchanged
         assertEquals(0, currentGameUiState.score)
 //        System.out.println("score: ${currentGameUiState.isGuessedWordWrong}")
@@ -89,16 +91,19 @@ class GameViewModelTest {
 
     @Test
     fun gameViewModel_WordSkipped_ScoreUnchangedAndWordCountIncreased() {
+        //GIVEN, 初始条件（测试前提）
         var currentGameUiState = viewModel.uiState.value
         val correctPlayerWord = getUnscrambledWord(currentGameUiState.currentScrambledWord)
 
+        // When, 触发动作（执行被测代码）
         viewModel.updateUserGuess(correctPlayerWord)
         viewModel.checkUserGuess()
         currentGameUiState = viewModel.uiState.value
         val lastWordCount = currentGameUiState.currentWordCount
-
         viewModel.skipWord()
         currentGameUiState = viewModel.uiState.value
+
+         //Then, 验证结果（断言）
         // Assert that score remains unchanged after word is skipped.
         assertEquals(SCORE_AFTER_FIRST_CORRECT_ANSWER, currentGameUiState.score)
         // Assert that word count is increased by 1 after word is skipped.
@@ -117,7 +122,7 @@ class GameViewModelTest {
             viewModel.checkUserGuess()
             currentGameUiState = viewModel.uiState.value
 //            correctPlayerWord = if(it==4) {"aaaa"} else {getUnscrambledWord(currentGameUiState.currentScrambledWord)}
-//            correctPlayerWord = getUnscrambledWord(currentGameUiState.currentScrambledWord)
+            correctPlayerWord = getUnscrambledWord(currentGameUiState.currentScrambledWord)
             // Assert that after each correct answer, score is updated correctly.
 //            System.out.println("score: ${currentGameUiState.score}")
 

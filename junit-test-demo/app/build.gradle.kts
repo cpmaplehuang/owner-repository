@@ -133,6 +133,8 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
+    testImplementation("org.mockito:mockito-core:5.4.0")
 
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0-alpha01")
     androidTestImplementation("androidx.test.ext:junit:1.3.0-alpha01")

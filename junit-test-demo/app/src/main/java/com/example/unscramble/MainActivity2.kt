@@ -31,11 +31,12 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.unscramble.kover.ExcludeFromReport
 import com.example.unscramble.ui.GameViewModel
 import kotlinx.coroutines.flow.observeOn
 import kotlinx.coroutines.launch
 
-
+@ExcludeFromReport
 public class MainActivity2 : AppCompatActivity() {
     private val gameViewModel: GameViewModel by viewModels()
 
