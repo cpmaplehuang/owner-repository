@@ -18,8 +18,10 @@
 plugins {
     id("com.android.application") version "8.1.2" apply false
     id("com.android.library") version "8.1.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.8.10" apply false
+    id("org.jetbrains.kotlin.android") version "2.0.0" apply false
     id("org.jetbrains.kotlinx.kover") version "0.9.1" apply false
+    id("tech.apter.junit5.jupiter.robolectric-extension-gradle-plugin") version "0.9.0" apply false
+    id("de.mannodermaus.android-junit5") version "1.12.0.0" apply false
 
 
     id("io.github.orange-3.unit-test-architect") version "1.1.1"  apply false

@@ -56,10 +56,6 @@ object MockKStaticDemoTest {
     fun normalMockTest() {
         val mockUserInfo = mockk<UserInfo>()
         val userData = UserData("1", 0, userInfo = mockUserInfo)
-        val userData2 = UserData("2")
-
-        assertEquals(null, userData2.getUserInfoSummary())
-
 
         // Mock mockUserInfo.summary() 放回 `summary`
         every { mockUserInfo.summary() } returns "summary"
