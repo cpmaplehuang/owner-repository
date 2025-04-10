@@ -132,7 +132,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.material:material:1.12.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+
+
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
     testImplementation("org.mockito:mockito-core:5.4.0")
@@ -146,4 +148,6 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.8")
     testImplementation("io.mockk:mockk-agent-jvm:1.13.8") // 需要处理静态方法时
     androidTestImplementation("io.mockk:mockk-android:1.13.8")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+
 }

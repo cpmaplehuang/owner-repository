@@ -1,6 +1,7 @@
+package com.example.unscramble
+
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
-import com.example.unscramble.UnscrambleApplication
 import org.junit.jupiter.api.Assertions.assertInstanceOf
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
