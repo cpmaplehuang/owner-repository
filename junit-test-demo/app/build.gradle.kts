@@ -136,6 +136,8 @@ dependencies {
 
 
     testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test:core:1.5.0")  // 核心库
+    androidTestImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
     testImplementation("org.mockito:mockito-core:5.4.0")
 

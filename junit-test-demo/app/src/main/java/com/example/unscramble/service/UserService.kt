@@ -32,7 +32,6 @@ class UserService {
 
         fun callRegisterApiWithThread(phone: String, pwd: String, callback: ServiceCallback<RegisterUserResponse>) {
             val runnable = Runnable {
-                Log.v("callRegisterApiWithThread", "callRegisterApiWithThread is Main: " + Looper.getMainLooper().isCurrentThread)
                 Thread.sleep(3000L)
                 Handler(Looper.getMainLooper()).post {
                     callback.onResult(
