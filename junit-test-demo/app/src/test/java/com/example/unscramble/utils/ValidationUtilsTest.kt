@@ -1,5 +1,19 @@
 package com.example.unscramble.utils
 
+import com.example.unscramble.data.RegisterUserResponse
+import com.example.unscramble.data.UserData
+import com.example.unscramble.data.UserInfo
+import com.example.unscramble.service.ServiceCallback
+import com.example.unscramble.service.UserService
+import com.example.unscramble.ui.RegisterViewModel
+import io.mockk.every
+import io.mockk.just
+import io.mockk.mockkObject
+import io.mockk.mockkStatic
+import io.mockk.runs
+import io.mockk.slot
+import junit.extension.runTestWithCoroutine
+import kotlinx.coroutines.test.advanceUntilIdle
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -176,9 +190,6 @@ class ValidationUtilsTest {
         //THEN
         assertFalse(isCorrect)
     }
-
-
-
 
 }
 

@@ -1,0 +1,11 @@
+{
+  "status" : 0,
+  "user_data" : {
+    "memberNo" : "2376713",
+    "status" : 0,
+    "user_info" : {
+      "user_name" : "test user name",
+      "phoneNum" : "12345678"
+    }
+  }
+}

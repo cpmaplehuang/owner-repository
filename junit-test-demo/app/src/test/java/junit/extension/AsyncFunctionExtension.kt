@@ -31,8 +31,8 @@ fun runTestWithCoroutine(dispatcher: CoroutineDispatcher = StandardTestDispatche
     Dispatchers.setMain(dispatcher)
     runTest(context, timeout) {
         this.testBody()
-        Dispatchers.resetMain()
     }
+    Dispatchers.resetMain()
 }
 
 

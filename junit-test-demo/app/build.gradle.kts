@@ -133,11 +133,11 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation("com.google.code.gson:gson:2.8.9")
+
 
 
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test:core:1.5.0")  // 核心库
-    androidTestImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
     testImplementation("org.mockito:mockito-core:5.4.0")
 
@@ -151,5 +151,6 @@ dependencies {
     testImplementation("io.mockk:mockk-agent-jvm:1.13.8") // 需要处理静态方法时
     androidTestImplementation("io.mockk:mockk-android:1.13.8")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    testImplementation("com.google.code.gson:gson:2.8.9")
 
 }

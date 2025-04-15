@@ -104,7 +104,12 @@ object MockKStaticDemoTest {
 
     @Test
     fun objectMockTest() {
-
+        /**
+         * 要注意ObjectStatic 和 ObjectStatic::class 的區別
+         * ObjectStatic 是一個實例，在kotlin的世界，object class 是一個實例來的(單例)
+         * ObjectStatic::class，是Class對象，Static方法是定義在Class對象上
+         * 所以，Mock的時候要注意區分，容易搞混。
+         * **/
         val msg = "test"
 
         mockkObject(ObjectStatic)
@@ -127,7 +132,7 @@ object MockKStaticDemoTest {
 
         val msg = "test"
 
-        mockkObject(CompanionObjectStatic.Companion)
+        mockkObject(CompanionObjectStatic)
 
         every { CompanionObjectStatic.callCompanionFunction(any()) } returns "mock"
 
